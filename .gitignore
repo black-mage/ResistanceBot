@@ -1,0 +1,5 @@
+Bin/
+Source/_Re*
+*.user
+*.suo
+*/*/obj/

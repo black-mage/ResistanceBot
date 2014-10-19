@@ -1,0 +1,10 @@
+RESISTANCE BOT
+
+An IRC bot for playing the Resistance Game, details of which can be found at : http://en.wikipedia.org/wiki/The_Resistance_(game)
+
+Dependencies(Included):
+			SmartIrc4Net 	- http://www.meebey.net/projects/smartirc4net/ 	- LGPL
+			Log4Net		- http://logging.apache.org/log4net/		- Apache Licence
+
+
+
