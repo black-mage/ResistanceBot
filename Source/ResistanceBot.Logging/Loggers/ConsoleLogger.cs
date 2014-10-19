@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using ResistanceBot.Logging.Abstract;
 using ResistanceBot.Logging.Data;
+using ResistanceBot.Logging.Providers;
 
 namespace ResistanceBot.Logging.Loggers
 {
@@ -16,13 +17,16 @@ namespace ResistanceBot.Logging.Loggers
 		};
 		public void Log(Severity severity, string message)
 		{
-			
-			var timeStamp = DateTime.Now;
-			var oldColor = Console.ForegroundColor;
-			Console.ForegroundColor = _colors[severity];
-			Console.WriteLine("{0}:{1} [{2}] {3}",timeStamp.ToShortDateString(),timeStamp.ToShortTimeString(),severity.ToString(),message);
-			Console.ForegroundColor = oldColor;
-			
+			if (LoggerProvider.LoggingEnabled)
+			{
+				var timeStamp = DateTime.Now;
+				var oldColor = Console.ForegroundColor;
+				Console.ForegroundColor = _colors[severity];
+				Console.WriteLine("{0}:{1} [{2}] {3}", timeStamp.ToShortDateString(), timeStamp.ToShortTimeString(),
+				                  severity.ToString(), message);
+				Console.ForegroundColor = oldColor;
+			}
+
 		}
 
 		public void Log(string message)

@@ -43,6 +43,7 @@
     <Compile Include="Data\Severity.cs" />
     <Compile Include="Loggers\ConsoleLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\LoggerFacade.cs" />
     <Compile Include="Providers\LoggerProvider.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
