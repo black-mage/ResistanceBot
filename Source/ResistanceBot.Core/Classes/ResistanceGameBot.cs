@@ -11,14 +11,14 @@ namespace ResistanceBot.Core.Classes
 {
 	public class ResistanceGameBot
 	{
-		private ILogger _logger = LoggerProvider.GetLogger();
+		private readonly ILogger _logger = LoggerProvider.GetLogger();
 		private readonly ResistanceGameManager _resistanceGameManager;
-		public string Server { get; private set; }
-		public string Channel { get; private set; }
+	    private string Server { get; set; }
+	    private string Channel { get; set; }
 		public string Nickname { get; private set; }
-		public string Username { get; private set; }
+	    private string Username { get; set; }
 
-		private IrcClient _irc;
+		private readonly IrcClient _irc;
 		
 
 		public ResistanceGameBot(string server, string nickname, string username, string channel)
